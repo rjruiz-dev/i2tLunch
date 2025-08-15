@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Mi Perfil - Lunch Time</title>
+    <style>
+        /* Estilos generales del dashboard  */
+        /* body {
+            background-color: #f8f9fa;  bg-body-tertiary 
+        } */
+        .nav-link {
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            border-radius: 0.375rem;
+            padding: 0.5rem 0.75rem;
+        }
+
+        .nav-link:hover {
+            background-color: #fff3cd;
+            color: #212529 !important;
+        }
+
+        .nav-link.active {
+            background-color: #ffeeba;
+            font-weight: 600;
+        }
+
+        /* Estilos para el nuevo diseño de perfil */
+        .profile-avatar-wrapper {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+        }
+        .profile-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .form-control:disabled, .form-control[readonly] {
+            background-color: #e9ecef;
+            opacity: 1;
+        }
+        .card {
+            border: none;
+        }
+        .nav-tabs .nav-link {
+            color: #6c757d;
+        }
+        .nav-tabs .nav-link.active {
+            color: #212529;
+            background-color: #f8f9fa;
+            border-bottom-color: #f8f9fa;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Botón para mostrar sidebar en móviles -->
+            <button class="btn btn-warning d-md-none m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+    
+            <!-- SIDEBAR INJECT -->
+            <div id="sidebar-placeholder" class="col-md-2"></div>
+            
+            <!-- Contenido Principal -->           
+            <main class="col-md-10 ms-sm-auto px-md-4 py-4 bg-body-tertiary">
+
+                <!-- NAVBAR INJECT -->
+                <div id="navbar-placeholder"></div>
+                                
+                <!-- INICIO DEL CONTENIDO DE LA PÁGINA DE PERFIL (REDiseñado) -->
+                <div class="row g-4">
+                    <!-- Columna Izquierda: Tarjeta de Perfil -->
+                    <div class="col-12 col-lg-4">
+                        <div class="card shadow-sm rounded-3 h-100">
+                            <div class="card-body text-center d-flex flex-column justify-content-center">
+                                <div class="profile-avatar-wrapper mb-3">
+                                    <img src="https://placehold.co/150x150/000000/FFFFFF?text=JP" alt="Foto de Perfil" class="rounded-circle profile-avatar">
+                                </div>
+                                <h4 class="card-title mb-1">Juan Perez</h4>
+                                <p class="text-muted mb-4">empleado@l2t.com</p>
+                                <div class="d-grid gap-2 col-8 mx-auto">
+                                     <button class="btn btn-outline-warning fw-bold"><i class="fas fa-camera me-2"></i>Cambiar Foto</button>
+                                     <button class="btn btn-outline-danger fw-bold"><i class="fas fa-trash-alt me-2"></i>Eliminar Foto</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Formulario de Edición -->
+                    <div class="col-12 col-lg-8">
+                        <div class="card shadow-sm rounded-3">
+                             <div class="card-body p-4 p-md-5">
+                                <!-- Pestañas de Navegación -->
+                                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active fw-bold" id="personal-tab" data-bs-toggle="tab" data-bs-target="#personal-tab-pane" type="button" role="tab" aria-controls="personal-tab-pane" aria-selected="true">Datos Personales</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link fw-bold" id="asistencia-tab" data-bs-toggle="tab" data-bs-target="#asistencia-tab-pane" type="button" role="tab" aria-controls="asistencia-tab-pane" aria-selected="false">Días de Asistencia</button>
+                                    </li>
+                                </ul>
+
+                                <!-- Contenido de las Pestañas -->
+                                <div class="tab-content" id="myTabContent">
+                                    <!-- Pestaña Datos Personales -->
+                                    <div class="tab-pane fade show active" id="personal-tab-pane" role="tabpanel" aria-labelledby="personal-tab" tabindex="0">
+                                        <form>
+                                            <div class="row g-3">
+                                                <div class="col-12">
+                                                    <label for="fullName" class="form-label">Nombre Completo</label>
+                                                    <input type="text" class="form-control" id="fullName" value="Juan Perez">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="email" class="form-label">Email</label>
+                                                    <input type="email" class="form-control" id="email" value="empleado@l2t.com" readonly>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- Pestaña Días de Asistencia -->
+                                    <div class="tab-pane fade" id="asistencia-tab-pane" role="tabpanel" aria-labelledby="asistencia-tab" tabindex="0">
+                                        <p class="text-muted mb-3">Selecciona los días que asistirás presencialmente a la oficina.</p>
+                                        <div class="d-flex flex-wrap gap-4">
+                                            <div class="form-check fs-5">
+                                                <input class="form-check-input" type="checkbox" id="lunes">
+                                                <label class="form-check-label" for="lunes">Lunes</label>
+                                            </div>
+                                            <div class="form-check fs-5">
+                                                <input class="form-check-input" type="checkbox" id="martes" checked>
+                                                <label class="form-check-label" for="martes">Martes</label>
+                                            </div>
+                                            <div class="form-check fs-5">
+                                                <input class="form-check-input" type="checkbox" id="miercoles" checked>
+                                                <label class="form-check-label" for="miercoles">Miércoles</label>
+                                            </div>
+                                            <div class="form-check fs-5">
+                                                <input class="form-check-input" type="checkbox" id="jueves">
+                                                <label class="form-check-label" for="jueves">Jueves</label>
+                                            </div>
+                                            <div class="form-check fs-5">
+                                                <input class="form-check-input" type="checkbox" id="viernes">
+                                                <label class="form-check-label" for="viernes">Viernes</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Botón de Guardar -->
+                                <div class="d-flex justify-content-end mt-5">
+                                    <button type="submit" class="btn btn-outline-dark fw-bold px-4 py-2">Guardar Cambios</button>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN DEL CONTENIDO DE LA PÁGINA DE PERFIL -->
+            </main>
+        </div>
+    </div>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>        
+        document.addEventListener('DOMContentLoaded', function () {
+            // Carga del sidebar y navbar
+            Promise.all([
+                fetch('/src/views/layout/sidebar.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        document.getElementById('sidebar-placeholder').innerHTML = html;
+                    }),
+                fetch('/src/views/layout/navbar.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        document.getElementById('navbar-placeholder').innerHTML = html;
+                    })
+            ]).then(() => {
+                // Puedes poner aquí eventos después de cargar el navbar/sidebar
+
+                // Activar pestaña automáticamente si hay hash en la URL
+                const hash = window.location.hash;
+                if (hash === '#asistencia') {
+                    const asistenciaTab = document.querySelector('#asistencia-tab');
+                    const tab = new bootstrap.Tab(asistenciaTab);
+                    tab.show();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
