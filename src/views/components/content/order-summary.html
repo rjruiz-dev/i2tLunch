@@ -1,0 +1,58 @@
+<style>
+.day-section {
+    transition: transform 0.3s ease;
+}
+
+.day-section:hover {
+    transform: translateX(-10px);
+    cursor: pointer;
+}
+</style>
+
+<!-- Contenedor derecho fijo -->
+<div class="border-start min-vh-100 sticky-top d-flex flex-column bg-light pt-0 ">
+
+    <!-- Card del resumen con padding interno -->
+    <div class="bg-white shadow-sm border rounded mt-4 mx-2 d-flex flex-column p-3">
+
+        <div class="mb-3">
+            <h4 class="mb-4">Resumen de mi Pedido</h4>
+
+            <!-- Lunes -->
+            <div class="day-section bg-light border rounded p-3 mb-3">
+                <h6 class="fw-bold">Lunes</h6>
+                <div class="d-flex align-items-center justify-content-between small mb-2">
+                    <div class="d-flex align-items-center">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop" class="me-3 rounded" style="width: 40px; height: 40px;" alt="item">
+                        <span>Ensalada Mediterránea</span>
+                    </div>
+                    <span class="text-danger fs-5" style="cursor: pointer;"><i class="fas fa-times-circle"></i></span>
+                </div>
+            </div>
+
+            <!-- Martes -->
+            <div class="day-section bg-light border rounded p-3 mb-3">
+                <h6 class="fw-bold">Martes</h6>
+                <p class="text-center text-muted small mt-2 mb-0">Agrega un plato para este día</p>
+            </div>
+
+            <!-- Miércoles -->
+            <div class="day-section bg-light border rounded p-3 mb-3">
+                <h6 class="fw-bold">Miércoles</h6>
+                <div class="d-flex align-items-center justify-content-between small mb-2">
+                    <div class="d-flex align-items-center">
+                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&w=2070&auto=format&fit=crop" class="me-3 rounded" style="width: 40px; height: 40px;" alt="item">
+                        <span>Pasta con Camarones</span>
+                    </div>
+                    <span class="text-danger fs-5" style="cursor: pointer;"><i class="fas fa-times-circle"></i></span>
+                </div>
+            </div>
+
+            <p class="text-muted small text-center my-3">Asistencia no configurada para Jueves y Viernes.</p>
+        </div>
+        
+        <div class="d-grid">
+            <button class="btn btn-danger active w-100 rounded-pill">Enviar Pedido Semanal</button>
+        </div>
+    </div>
+</div>

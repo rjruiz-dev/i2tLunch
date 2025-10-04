@@ -1,0 +1,69 @@
+<div class="row flex-column flex-md-row align-items-md-start text-center text-md-start">
+    <!-- Título de Filtros -->
+    <div class="col-12 mb-3">
+        <h4>
+            Filtros de menú
+        </h4>     
+    </div>
+    <!-- Día del Menú -->
+    <div class="col-md-6 ">
+        <div class="px-4 py-4 shadow-sm border rounded h-100">
+            <h5 class="mb-3 text-center">Día del Menú</h5>
+            <ul class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2 list-unstyled m-0 p-0">
+                <li><a href="#" class="btn btn-danger active rounded-pill">Lunes</a></li>
+                <li><a href="#" class="btn btn-outline-danger rounded-pill">Martes</a></li>
+                <li><a href="#" class="btn btn-outline-danger rounded-pill">Miércoles</a></li>
+                <li><a href="#" class="btn btn-outline-danger rounded-pill">Jueves</a></li>
+                <li><a href="#" class="btn btn-outline-danger rounded-pill">Viernes</a></li>
+            </ul>       
+        </div>
+    </div>
+
+    <!-- Categorías -->
+    <div class="col-md-6">
+        <div class="px-4 py-4 shadow-sm border rounded h-100">
+            <h5 class="mb-3 text-center">Categorías</h5>
+            <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                <!-- Flecha izquierda -->
+                <button class="btn btn-light me-2" id="scroll-left"><i class="fas fa-chevron-left"></i></button>               
+              
+                <div id="categories-carousel" class="d-flex overflow-hidden w-100">
+                    <div class="d-flex flex-nowrap" style="min-width: max-content; transition: transform 0.3s;">
+                        
+                        <button class="btn btn-danger d-flex flex-column align-items-center justify-content-center rounded-pill text-center me-2 px-3 py-2">
+                            <i class="fas fa-border-all fa-lg m-2" title="Todos"></i>                           
+                        </button>
+                      
+                        <button class="btn btn-outline-danger d-flex flex-column align-items-center justify-content-center rounded-pill text-center me-2 px-3 py-2">
+                            <i class="fas fa-drumstick-bite fa-lg m-2" title="Carnes"></i>      
+                        </button>
+                        
+                        <button class="btn btn-outline-danger d-flex flex-column align-items-center justify-content-center rounded-pill text-center me-2 px-3 py-2">
+                            <i class="fas fa-burger fa-lg m-2" title="Pastas"></i>                           
+                        </button>
+                       
+                        <button class="btn btn-outline-danger d-flex flex-column align-items-center justify-content-center rounded-pill text-center me-2 px-3 py-2">
+                           <i class="fas fa-bowl-food fa-lg m-2" title="Postres"></i>                        
+                        </button>
+                      
+                        <button class="btn btn-outline-danger d-flex flex-column align-items-center justify-content-center rounded-pill text-center me-2 px-3 py-2">
+                            <i class="fas fa-leaf fa-lg m-2" title="Vegano"></i>                          
+                        </button>
+                      
+                        <button class="btn btn-outline-danger d-flex flex-column align-items-center justify-content-center rounded-pill text-center me-2 px-3 py-2">
+                            <i class="fas fa-glass-martini-alt fa-lg m-2" title="Bebidas"></i>                            
+                        </button>
+                       
+                        <button class="btn btn-outline-danger d-flex flex-column align-items-center justify-content-center rounded-pill text-center me-2 px-3 py-2">
+                            <i class="fas fa-bowl-rice fa-lg m-2" title="Sopas"></i>                          
+                        </button>                       
+                    </div>
+                </div>
+
+                <!-- Flecha derecha -->
+                <button class="btn btn-light ms-2" id="scroll-right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+

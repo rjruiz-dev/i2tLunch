@@ -1,0 +1,10 @@
+body {  
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+.container-fluid, .row, #sidebar-container, #main-content, #order-summary {
+  padding: 0;
+  margin: 0;
+}
