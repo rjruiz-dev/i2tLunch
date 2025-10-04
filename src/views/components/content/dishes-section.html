@@ -1,0 +1,72 @@
+<style>
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+.heart-icon i {
+    font-size: 1.5rem;
+    color: #dc3545; /* color rojo bootstrap */
+    cursor: pointer;
+    user-select: none;
+}
+</style>
+
+<div>
+    <p class="text-muted fs-4 mb-0 px-3">Platos Disponibles para el <strong>Lunes</strong></p>
+
+</div>
+<div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+    
+    <div class="col">
+        <div class="card h-100 position-relative">
+            <div class="heart-icon position-absolute top-0 end-0 p-2">
+                <i class="fa-regular fa-heart">gfgfgfg</i>
+            </div>
+            <div class="ratio ratio-4x3">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop" class="card-img-top" alt="Ensalada César">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Ensalada Mediterránea</h5>
+                <p class="card-text text-muted small">Pollo grillado, lechuga, crutones, queso parmesano y aderezo especial.</p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3">
+                <a href="#" class="btn btn-danger active w-100 rounded-pill">Seleccionar</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col">
+        <div class="card h-100">
+            <div class="ratio ratio-4x3">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop" class="card-img-top" alt="Pizza">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Pizza Margarita</h5>
+                <p class="card-text text-muted small">Salsa de tomate casera, mozzarella fresca y albahaca. Un clásico italiano.</p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3">
+                <a href="#" class="btn btn-outline-danger w-100 rounded-pill">Seleccionar</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col">
+        <div class="card h-100">
+            <div class="ratio ratio-4x3">
+                <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&w=2070&auto=format&fit=crop" class="card-img-top" alt="Pasta">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Pasta con Camarones</h5>
+                <p class="card-text text-muted small">Spaghetti al dente con camarones salteados en ajo, perejil y aceite de oliva.</p>
+            </div>
+            <div class="card-footer bg-white border-0 pb-3">
+                <a href="#" class="btn btn-outline-danger w-100 rounded-pill">Seleccionar</a>
+            </div>
+        </div>
+    </div>
+</div>

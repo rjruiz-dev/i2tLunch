@@ -1,0 +1,10 @@
+.bg-soft-orange  {
+  background-color: #de9629 !important; /* naranja suave */
+  /* color: #212529; */
+}
+
+.nav-link:hover:not(.active) {
+  /* background-color: rgba(255, 255, 255, 0.05); */
+  background-color: #de9629 ;
+  /* color: #f3caca; */
+}
