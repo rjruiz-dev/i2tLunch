@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Sistema de Pedidos</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos generales (coherentes con el diseño principal) */
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- Columna Izquierda (Navegación) --- */
+        .sidebar {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-right: 1px solid #dee2e6;
+            min-height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .sidebar .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .nav-link {
+            color: #6c757d;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link i {
+            margin-right: 0.8rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* El link activo ahora es "Perfil" */
+        .sidebar .nav-link.active, .nav-link:hover {
+            background-color: #0d6efd;
+            color: #ffffff;
+        }
+        
+        /* --- Área de Contenido Principal --- */
+        .content-area {
+            padding: 2.5rem;
+            width: 100%;
+        }
+        
+        .profile-card, .settings-card {
+            background-color: #fff;
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+        }
+
+        /* Avatar de Perfil */
+        .avatar-upload {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: auto;
+        }
+        .avatar-upload .avatar-preview {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .avatar-upload .avatar-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .avatar-upload .avatar-edit {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            z-index: 1;
+        }
+        .avatar-upload .avatar-edit input {
+            display: none;
+        }
+        .avatar-upload .avatar-edit label {
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            margin-bottom: 0;
+            border-radius: 100%;
+            background: #FFFFFF;
+            border: 1px solid #dee2e6;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+            font-weight: normal;
+            transition: all .2s ease-in-out;
+            text-align: center;
+            line-height: 32px;
+        }
+        .avatar-upload .avatar-edit label:hover {
+            background: #f1f1f1;
+            border-color: #d6d6d6;
+        }
+        
+        /* Días de Asistencia */
+        .attendance-days {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .day-toggle input {
+            display: none;
+        }
+        .day-toggle label {
+            display: block;
+            padding: 0.5rem 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            user-select: none;
+        }
+        .day-toggle input:checked + label {
+            background-color: #0d6efd;
+            color: #fff;
+            border-color: #0d6efd;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- ======================================================= -->
+            <!-- == COLUMNA IZQUIERDA: MENÚ DE NAVEGACIÓN             == -->
+            <!-- ======================================================= -->
+            <nav class="col-lg-2 col-md-3 d-none d-md-block sidebar">
+                <div class="position-sticky">
+                    <h3 class="logo">Aromas Light</h3>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-home"></i>
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-utensils"></i>
+                                Mi Pedido
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-history"></i>
+                                Historial
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class="fas fa-user-cog"></i>
+                                Perfil
+                            </a>
+                        </li>
+                         <li class="nav-item mt-5">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- ======================================================= -->
+            <!-- == COLUMNA CENTRAL: CONTENIDO DE LA PÁGINA DE PERFIL == -->
+            <!-- ======================================================= -->
+            <main class="col-lg-10 col-md-9">
+                <div class="content-area">
+                    <h2 class="mb-4">Configuración del Perfil</h2>
+                    <div class="row">
+                        <!-- Columna de Información Personal y Asistencia -->
+                        <div class="col-lg-8">
+                            <div class="profile-card mb-4">
+                                <h5 class="mb-4">Información Personal</h5>
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit">
+                                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                                <label for="imageUpload"><i class="fas fa-pencil-alt"></i></label>
+                                            </div>
+                                            <div class="avatar-preview">
+                                                 <img id="imagePreview" src="https://placehold.co/150x150/EBF5FF/0d6efd?text=Jack" alt="Avatar">
+                                            </div>
+                                        </div>
+                                        <h5 class="mt-3">Jack Gibbs</h5>
+                                        <p class="text-muted">Empleado</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="fullName" class="form-label">Nombre Completo</label>
+                                                <input type="text" class="form-control" id="fullName" value="Jack Gibbs">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Correo Electrónico</label>
+                                                <input type="email" class="form-control" id="email" value="jack.gibbs@i2t.com.ar">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <h5 class="mb-4">Días de Asistencia</h5>
+                                <p class="text-muted">Selecciona los días que asistirás a la oficina. El menú solo se mostrará para los días que elijas.</p>
+                                <div class="attendance-days">
+                                    <div class="day-toggle">
+                                        <input type="checkbox" id="lunes" checked>
+                                        <label for="lunes">Lunes</label>
+                                    </div>
+                                    <div class="day-toggle">
+                                        <input type="checkbox" id="martes">
+                                        <label for="martes">Martes</label>
+                                    </div>
+                                    <div class="day-toggle">
+                                        <input type="checkbox" id="miercoles" checked>
+                                        <label for="miercoles">Miércoles</label>
+                                    </div>
+                                    <div class="day-toggle">
+                                        <input type="checkbox" id="jueves">
+                                        <label for="jueves">Jueves</label>
+                                    </div>
+                                    <div class="day-toggle">
+                                        <input type="checkbox" id="viernes">
+                                        <label for="viernes">Viernes</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Columna de Seguridad y Notificaciones -->
+                        <div class="col-lg-4">
+                             <div class="settings-card mb-4">
+                                <h5 class="mb-4">Seguridad</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="currentPassword" class="form-label">Contraseña Actual</label>
+                                        <input type="password" class="form-control" id="currentPassword">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="newPassword" class="form-label">Nueva Contraseña</label>
+                                        <input type="password" class="form-control" id="newPassword">
+                                    </div>
+                                     <button type="submit" class="btn btn-secondary w-100">Cambiar Contraseña</button>
+                                </form>
+                            </div>
+                             <div class="settings-card">
+                                <h5 class="mb-4">Notificaciones</h5>
+                                <div class="form-check form-switch">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="emailNotifications" checked>
+                                  <label class="form-check-label" for="emailNotifications">Recibir recordatorios por correo</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Botones de Acción -->
+                    <div class="mt-4 text-end">
+                        <button type="button" class="btn btn-outline-secondary me-2">Descartar</button>
+                        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script para previsualizar la imagen de perfil
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('imagePreview').setAttribute('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        document.getElementById('imageUpload').addEventListener('change', function() {
+            readURL(this);
+        });
+    </script>
+</body>
+</html>
